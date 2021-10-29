@@ -1,7 +1,4 @@
-作者：xiyou
-链接：https://zhuanlan.zhihu.com/p/365191541
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
 
 #该脚本的作用是将xml格式的文件转换成yolo需要的格式
 
@@ -16,7 +13,7 @@ fire-detect:
     VOC2020 to yolo format code
 '''
 sets = [('2020', 'train')]
-classes = ['reflective_clothes', 'other_clothes']
+classes = ['construction waste']
 
 # VOC2020 folder root
 #data_root = r'/home/fire_data/'

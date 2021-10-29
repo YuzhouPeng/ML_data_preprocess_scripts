@@ -14,19 +14,19 @@ def remove_pics(file_path):
                 # print(file)
                 file_prefix = file.split(".")[0]
                 print(parent+"/"+file_prefix+'.xml')
-                print(parent+"/"+file_prefix+'.txt')
+                # print(parent+"/"+file_prefix+'.txt')
                 prefix = parent.split("/")[-1]
                 if os.path.exists(parent+"/"+file_prefix+'.xml'):
                     os.rename(os.path.join(parent, file), os.path.join(parent, prefix+file))
                     os.rename(os.path.join(parent, file_prefix+'.xml'), os.path.join(parent, prefix+file_prefix+'.xml'))
-                elif os.path.exists(parent+"/"+file_prefix+'.txt'):
-                    os.rename(os.path.join(parent, file), os.path.join(parent, prefix+file))
-                    os.rename(os.path.join(parent, file_prefix+'.txt'), os.path.join(parent, prefix+file_prefix+'.txt'))
+                # elif os.path.exists(parent+"/"+file_prefix+'.txt'):
+                #     os.rename(os.path.join(parent, file), os.path.join(parent, prefix+file))
+                #     os.rename(os.path.join(parent, file_prefix+'.txt'), os.path.join(parent, prefix+file_prefix+'.txt'))
                 #  or file[-7:]=="act.jpg" or file[-11:]=="predict.jpg":
                     # os.remove(os.path.join(parent, file))
 
 
 if __name__ == '__main__':
-    remove_pics("/home/pengyuzhou/workspace/construction_waste_img_label1")
+    remove_pics("/home/pengyuzhou/workspace/dust_data")
     # remove_pics(r"D:\images_3T736_copy")
 

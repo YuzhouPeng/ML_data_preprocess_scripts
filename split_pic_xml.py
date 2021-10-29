@@ -1,6 +1,6 @@
 import os,shutil
-xmlfilepath =  "C:\\Users\\admin\\Desktop\\val_xml"
-jpgfilepath = "C:\\Users\\admin\\Desktop\\val_jpg"
+xmlfilepath =  "/home/pengyuzhou/workspace/dust_data/dust_xml"
+jpgfilepath = "/home/pengyuzhou/workspace/dust_data/dust_img"
 def remove_pics(file_path):
     for parent, _, files in os.walk(file_path):
         for file in (files):
@@ -18,4 +18,4 @@ def remove_pics(file_path):
 
 
 if __name__ == '__main__':
-    remove_pics("C:\\Users\\admin\\Desktop\\num_recognition_val")
+    remove_pics("/home/pengyuzhou/workspace/dust_data/yc1")
