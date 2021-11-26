@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-folderpath = "/home/pengyuzhou/workspace/chips"
+folderpath = "/home/pengyuzhou/workspace/chips_1"
 # namedict = {"斑渍":"banzi","擦伤":"cashang","搭线":"daxian","断经":"duanjing","横档":"hengdang","破洞":"podong","浅斑":"qianban","色渍":"sezi","水渍":"shuizi","停车印":"tincheyin","斜皱":"xiezhou","油渍":"youzi","预缩皱":"yusuozhou","沾污":"zhanwu","皱条":"zhoutiao","竹夹":"zhujia","竹节":"zhujie","图层":"tuceng"}
 namedict = {"anormal":0,"missing":1,"normal":2,"spin":3}
 namedict_train = {"anormal_train":0,"missing_train":1,"normal_train":2,"spin_train":3}
@@ -37,7 +37,8 @@ names = ["anormal","missing","normal","spin","anormal_train","missing_train","no
 #             # print(newname)
 #             os.rename(filename,newname)
 
-colname = [["FileID","SpeciesID"]]
+# colname = [["FileID","SpeciesID"]]
+colname = [["image_id","anormal","missing","normal","spin"]]
 res = []
 
 for parent,_,files in os.walk(folderpath):
@@ -52,15 +53,24 @@ for parent,_,files in os.walk(folderpath):
             filename = os.path.join(parent,file)
 
             n = prefix+'_'+file_prefix+".jpg"
+            n1 = prefix+'_'+file_prefix
             newname = os.path.join(parent,n)
             os.rename(filename,newname)
             temp = []
             if prefix in namedict:
-                temp.append(n)
-                temp.append(str(namedict[prefix]))         
+                temp.append(n1)
+                label = [0,0,0,0]
+                label[namedict[prefix]] = 1
+                for i in range(len(label)):
+                    temp.append(label[i])
+                # temp.append(label)         
             elif prefix in namedict_train:
-                temp.append(n)
-                temp.append(str(namedict_train[prefix]))         
+                temp.append(n1)
+                label = [0,0,0,0]
+                label[namedict_train[prefix]]=1
+                for i in range(len(label)):
+                    temp.append(label[i])
+                # temp.append(label)         
             # count+=1
             res.append(temp)
 
@@ -71,4 +81,4 @@ test=pd.DataFrame(columns=colname,data=res)
 
 print(test)
 
-test.to_csv('testcsv1.csv',encoding='utf-8',header=None,index=None)
+test.to_csv('chips_train1.csv',encoding='utf-8',header=None,index=None)
