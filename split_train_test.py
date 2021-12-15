@@ -40,11 +40,11 @@ def split_train_test(img_path, img_outputpath, valid_size,xml_path,xml_outputpat
                 shutil.move(img_path+"/"+img_name, img_train_outputpath+'/'+img_name)
                 # shutil.move(xml_path+"/"+xml_name, os.path.join(xml_train_outputpath, xml_name))
 if __name__ == "__main__":
-    img_outputpath = "/home/pengyuzhou/workspace/safty_belt/val/wear"
+    img_outputpath = "/home/pengyuzhou/workspace/safty_belt3/val/wear"
     xml_outputpath = "/home/pengyuzhou/workspace/train_datas/data/dust/val/labels"
-    img_train_outputpath = "/home/pengyuzhou/workspace/safty_belt/train/wear"
+    img_train_outputpath = "/home/pengyuzhou/workspace/safty_belt3/train/wear"
     xml_train_outputpath = "/home/pengyuzhou/workspace/train_datas/data/dust/train/labels"
-    data_path = "/home/pengyuzhou/workspace/safty_belt2/wear"
+    data_path = "/home/pengyuzhou/workspace/safty_belt3/wear"
     xml_path = "/home/pengyuzhou/workspace/train_datas/data/dust/txt_labels"
     # train_path = os.path.join(outputpath, "train")
     # if not os.path.exists(train_path):
