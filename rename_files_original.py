@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-folderpath = "/home/pengyuzhou/workspace/safty_belt3/wear"
+folderpath = "/home/pengyuzhou/workspace/gt_db"
 
 
 

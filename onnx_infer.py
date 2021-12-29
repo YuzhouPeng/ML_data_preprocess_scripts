@@ -78,7 +78,7 @@ def to_numpy(tensor):
     return tensor.detach().cpu().numpy() if tensor.requires_grad else tensor.cpu().numpy()
 
 r_model_path="/home/zigangzhao/DMS/mtcnn-pytorch/test0815/onnx_model/rnet.onnx"
-o_model_path="/home/pengyuzhou/workspace/pytorch-train/safety_belt_efficientnet_b3_onnxs.onnx"
+o_model_path="/home/pengyuzhou/workspace/pytorch-train/safety_belt_mobilenet_v3_small_onnxs.onnx"
 
 
 
@@ -119,7 +119,7 @@ train_trans = torchvision.transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
 ])
-for parent,_,files in os.walk("/home/pengyuzhou/workspace/safetybelt_test/wear"):
+for parent,_,files in os.walk("/home/pengyuzhou/workspace/safety_belt12.23/test1"):
     for file in files:
         filepath = os.path.join(parent,file)
         # img = cv2.imread(filepath)
