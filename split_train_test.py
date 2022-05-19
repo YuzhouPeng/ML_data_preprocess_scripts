@@ -22,7 +22,8 @@ def split_train_test(img_path, img_outputpath, valid_size,xml_path,xml_outputpat
             for img in val:
                 img_name = img.split('/')[-1]
                 label_name = img.split('/')[-2]
-                xml_name = img_name.replace('png', 'txt')
+
+                xml_name = img_name.replace('jpg', 'txt')
                 # img_path = os.path.join(root, img_name)
                 # xml_path = os.path.join(root, xml_name)
                 # if not os.path.exists(os.path.join(valid_path, label_name)):
@@ -32,7 +33,7 @@ def split_train_test(img_path, img_outputpath, valid_size,xml_path,xml_outputpat
             for img in train:
                 img_name = img.split('/')[-1]
                 label_name = img.split('/')[-2]
-                xml_name = img_name.replace('png', 'txt')
+                xml_name = img_name.replace('jpg', 'txt')
                 # img_path = os.path.join(root, img_name)
                 # xml_path = os.path.join(root, xml_name)
                 # if not os.path.exists(os.path.join(valid_path, label_name)):
@@ -40,12 +41,12 @@ def split_train_test(img_path, img_outputpath, valid_size,xml_path,xml_outputpat
                 shutil.move(img_path+"/"+img_name, img_train_outputpath+'/'+img_name)
                 # shutil.move(xml_path+"/"+xml_name, os.path.join(xml_train_outputpath, xml_name))
 if __name__ == "__main__":
-    img_outputpath = "/home/pengyuzhou/workspace/safty_belt9/val/empty"
-    xml_outputpath = "/home/pengyuzhou/workspace/train_datas/data/dust/val/labels"
-    img_train_outputpath = "/home/pengyuzhou/workspace/safty_belt9/train/empty"
-    xml_train_outputpath = "/home/pengyuzhou/workspace/train_datas/data/dust/train/labels"
-    data_path = "/home/pengyuzhou/workspace/safty_belt9/empty"
-    xml_path = "/home/pengyuzhou/workspace/train_datas/data/dust/txt_labels"
+    img_outputpath = "/home/pengyuzhou/workspace/cellphone_v9/val/normal/"
+    xml_outputpath = "/home/pengyuzhou/workspace/seatbeltv2/vallabel"
+    img_train_outputpath = "/home/pengyuzhou/workspace/cellphone_v9/train/normal/"
+    xml_train_outputpath = "/home/pengyuzhou/workspace/seatbeltv2/trainlabel"
+    data_path = "/home/pengyuzhou/workspace/cellphone_v9/origin/normal/"
+    xml_path = "/home/pengyuzhou/workspace/seatbeltv2/labels"
     # train_path = os.path.join(outputpath, "train")
     # if not os.path.exists(train_path):
     #     os.mkdir(train_path)
